@@ -1,0 +1,16 @@
+:host {
+  button {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #eee;
+    cursor: pointer;
+
+    &.is-complete {
+      border: 2px solid transparent;
+    }
+
+    &:hover {
+      border: 2px solid #eee;
+    }
+  }
+}

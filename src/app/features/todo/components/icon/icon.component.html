@@ -1,0 +1,40 @@
+<div class="icon" [style.width.px]="size" [style.height.px]="size">
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'chevron-down'">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 5">
+        <path
+          fill-rule="evenodd"
+          d="M.646.646a.5.5 0 0 1 .708 0L4 3.293 6.646.646a.5.5 0 1 1 .708.708l-3 3a.5.5 0 0 1-.707 0l-3-3a.5.5 0 0 1 0-.708z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'delete'">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 14"
+        style="transform: rotate(45deg)"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M7 0a1 1 0 0 0-1 1v5H1a1 1 0 0 0 0 2h5v5a1 1 0 1 0 2 0V8h5a1 1 0 1 0 0-2H8V1a1 1 0 0 0-1-1z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'checkmark'">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.53 21.64 0 14.31 1.43 12.84 7.48 18.73 22.52 3.08 24 4.5 7.53 21.64z"
+        />
+      </svg>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'default'"></ng-container>
+  </ng-container>
+</div>

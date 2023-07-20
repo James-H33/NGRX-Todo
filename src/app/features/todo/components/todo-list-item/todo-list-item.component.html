@@ -1,0 +1,16 @@
+<div class="todo" *ngIf="todo" [class.is-complete]="todo.isComplete">
+  <div class="todo-complete" (click)="onCompletedChange()">
+    <CompleteTodoBtn [isComplete]="todo.isComplete" />
+  </div>
+
+  <div class="todo-title">
+    {{todo.title}}
+  </div>
+
+  <div class="todo-delete" (click)="onDelete()">
+    <Icon
+      type="delete"
+      [size]="15"
+    />
+  </div>
+</div>

@@ -1,0 +1,38 @@
+:host {
+  .todo {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    font-size: 1.1rem;
+    column-gap: 10px;
+
+    &.is-complete {
+      .todo-title {
+        text-decoration: line-through;
+      }
+    }
+
+    .todo-complete {
+      text-align: center;
+    }
+
+    .todo-title {
+      cursor: pointer;
+    }
+
+    .todo-delete {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        ::ng-deep {
+          Icon {
+            --fill-color: rgba(188, 2, 2, 0.951);
+          }
+        }
+      }
+    }
+  }
+}
