@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { ITodo } from '../types';
+import { FilterTypes } from '../types/filter-types.enum';
 
 export const GetAllTodos = createAction(
   '[Todo] Get All Todos'
@@ -65,3 +66,8 @@ export const ClearCompletedTodosFailure = createAction(
   '[Todo] Clear Completed Failure',
   props<{ error: string }>()
 )
+
+export const SetFilterType = createAction(
+  '[Todo] Set Filter Status',
+  props<{ filter: FilterTypes }>()
+);

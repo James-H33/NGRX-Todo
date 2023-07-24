@@ -69,11 +69,15 @@
       display: flex;
       justify-content: center;
 
-      > div {
+      .todo-actions__filter {
         padding: 0 10px;
         cursor: pointer;
         border: 1px solid transparent;
         border-radius: 6px;
+
+        &.is-active {
+          border: 1px solid var(--primary-color);
+        }
 
         &:hover {
           border: 1px solid var(--primary-color);

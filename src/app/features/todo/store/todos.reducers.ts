@@ -1,16 +1,19 @@
 import { createReducer, on } from '@ngrx/store';
 import { ITodo } from '../types';
 
+import { FilterTypes } from '../types/filter-types.enum';
 import * as TodoActions from './todos.actions';
 
 export interface ITodosState {
   todos: ITodo[];
   error: string;
+  filter: FilterTypes;
 }
 
 export const initialTodosState: ITodosState = {
   todos: [],
-  error: ''
+  error: '',
+  filter: FilterTypes.All
 }
 
 export const todosReducer = createReducer(
@@ -77,6 +80,13 @@ export const todosReducer = createReducer(
     return {
       ...s,
       error: 'Clearing Completed todos was unsuccessful'
+    }
+  }),
+
+  on(TodoActions.SetFilterType, (s, { filter }) => {
+    return {
+      ...s,
+      filter
     }
   })
 );
