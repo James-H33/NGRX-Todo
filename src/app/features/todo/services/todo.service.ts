@@ -16,6 +16,11 @@ export class TodoService {
       id: '233',
       title: 'Test 2',
       isComplete: true
+    },
+    {
+      id: '344',
+      title: 'Test 3',
+      isComplete: false
     }
   ];
 

@@ -1,6 +1,6 @@
 <div class="todo-title">Todos</div>
 
-<ng-container *ngIf="todos$ | async as todos">
+<ng-container *ngIf="vm$ | async as vm">
   <div class="todo-container">
     <div class="todo-input-form">
       <div class="todo-input-form__complete">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="todo-list">
-      <ng-container *ngFor="let todo of todos">
+      <ng-container *ngFor="let todo of vm.todos">
         <TodoListItem
           [todo]="todo"
           (completeChanged)="updateCompleted($event)"
@@ -29,13 +29,31 @@
 
     <div class="todo-actions">
       <div class="todo-actions__count">
-        Items {{todos.length}}
+        Items {{vm.todos.length}}
       </div>
 
       <div class="todo-actions__filters">
-        <div>All</div>
-        <div>Active</div>
-        <div>Completed</div>
+        <div
+          class="todo-actions__filter"
+          [class.is-active]="vm.filter === filterTypes.All"
+          (click)="setFilter(filterTypes.All)">
+          All
+        </div>
+
+        <div
+          class="todo-actions__filter"
+          [class.is-active]="vm.filter === filterTypes.Active"
+          (click)="setFilter(filterTypes.Active)">
+          Active
+        </div>
+
+        <div
+          class="todo-actions__filter"
+          [class.is-active]="vm.filter === filterTypes.Completed"
+          (click)="setFilter(filterTypes.Completed)">
+          Completed
+        </div>
+
       </div>
 
       <div class="todo-actions__clear" (click)="clearAllCompleted()">
